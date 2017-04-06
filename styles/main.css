@@ -1,6 +1,6 @@
 body{
-  background: #FBBA72;
-  color: #CA5310;
+  background: #8D86C9;
+  color: #242038;
 }
 .title{
   text-align: center;
@@ -8,14 +8,14 @@ body{
 .map{
   width: 90%;
   height: 400px;
-  border: 2px solid #BB4D00;
+  border: 2px solid #CAC4CE;
   border-radius: 20px;
   margin: 0 0 1% 5%;
 }
 .searchstuff{
   margin: 0 0 1% 5%;
   width: 90%;
-  border: 2px solid #BB4D00;
+  border: 2px solid #CAC4CE;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -23,24 +23,24 @@ body{
 }
 .in{
   font-size: 20px;
-  border: 1px solid #BB4D00;
+  border: 1px solid #CAC4CE;
   border-radius: 20px;
   padding: 5px;
 }
 .in:focus {
   outline: none;
-  border-color: #8F250C;
-  box-shadow: 0 0 10px #8F250C;
+  border-color: #242038;
+  box-shadow: 0 0 10px #242038;
 }
 .inbtn{
   font-size: 20px;
-  border: 1px solid #BB4D00;
+  border: 1px solid #242038;
   border-radius: 20px;
-  background: #FBBA72;
-  color: #CA5310;
+  background: #8D86C9;
+  color: #242038;
 }
 .inbtn:focus {
   outline: none;
-  border-color: #8F250C;
-  box-shadow: 0 0 10px #8F250C;
+  border-color: #242038;
+  box-shadow: 0 0 10px #242038;
 }
