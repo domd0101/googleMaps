@@ -10,7 +10,9 @@
 <body ng-controller='mainCtrl'>
 
   <h1 class='title'>Dommo Map's</h1>
+
   <div id="googleMap" class='map'></div>
+
   <div class='searchstuff'>
 
     <h2> Search by Zip Code:  <input ng-model='zip1' class='in' placeholder="Zip Stuff">
@@ -18,7 +20,7 @@
         </h2>
 
     <h2> Search For Food:  <input ng-model='food' class='in' placeholder="Food Stuff">
-      <button ng-click='Food(some)' class='inbtn'>Go</button></input>
+      <button ng-click='taco(food)' class='inbtn'>Go</button></input>
         </h2>
 
   </div>
@@ -33,10 +35,12 @@
   </div>
 
 
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2f09BzLRIDauS6VVvHpyMuzn1ZfVRocc&libraries=places&callback=initMap" async defer></script> -->
 
-<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB2f09BzLRIDauS6VVvHpyMuzn1ZfVRocc' type="text/javascript"></script>
 <script src="https://code.angularjs.org/1.6.3/angular.min.js" charset="utf-8"></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB2f09BzLRIDauS6VVvHpyMuzn1ZfVRocc&libraries=places'></script>
 <script src="js/app.js" charset="utf-8"></script>
 <script src="js/mainCtrl.js" charset="utf-8"></script>
+
 </body>
 </html>
