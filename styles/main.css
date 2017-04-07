@@ -1,9 +1,16 @@
 body{
-  background: #8D86C9;
+  background: LightGray;
   color: #242038;
 }
 .title{
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+.title img{
+  border-radius: 20px;
+  box-shadow: 8px 9px 22px -6px;
 }
 .map{
   width: 90%;
@@ -11,8 +18,10 @@ body{
   border: 2px solid #CAC4CE;
   border-radius: 20px;
   margin: 0 0 1% 5%;
+  box-shadow: 8px 9px 22px -6px;
 }
 .searchstuff{
+  background: White;
   margin: 0 0 1% 5%;
   width: 90%;
   border: 2px solid #CAC4CE;
@@ -20,6 +29,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 8px 9px 22px -6px;
 }
 .in{
   font-size: 20px;

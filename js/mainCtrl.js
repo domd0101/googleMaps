@@ -1,5 +1,4 @@
-angular.module('app1')
-  .controller('mainCtrl',['$scope','$http',function($scope,$http){
+app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
 
     $scope.map;
 
