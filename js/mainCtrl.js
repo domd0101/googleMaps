@@ -16,15 +16,100 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
       (function myMap() {
         if(para==='one'){
            var center = new google.maps.LatLng($scope.data1.lat, $scope.data1.lon);
-           var mapOptions = { center: center, zoom: 11 };
-           var marker = new google.maps.Circle({
-                 center: center,
-                 radius: 3000,
-                 strokeColor: "Coral ",
-                 strokeOpacity: 0.8,
-                 strokeWeight: 2,
-                 fillColor: "Coral",
-                 fillOpacity: 0.4,
+           var mapOptions = {
+             center: center,
+              zoom: 13,
+              styles:[
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "visibility": "simplified"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "stylers": [
+                            {
+                                "hue": 149
+                            },
+                            {
+                                "saturation": -78
+                            },
+                            {
+                                "lightness": 0
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "stylers": [
+                            {
+                                "hue": -31
+                            },
+                            {
+                                "saturation": -40
+                            },
+                            {
+                                "lightness": 2.8
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "label",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "stylers": [
+                            {
+                                "hue": 163
+                            },
+                            {
+                                "saturation": -26
+                            },
+                            {
+                                "lightness": -1.1
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "stylers": [
+                            {
+                                "hue": 3
+                            },
+                            {
+                                "saturation": -24.24
+                            },
+                            {
+                                "lightness": -38.57
+                            }
+                        ]
+                    }
+                ]
+             };
+           var image = 'http://maps.google.com/intl/en_us/mapfiles/ms/micons/blue.png';
+           var marker = new google.maps.Marker({
+                 draggable: true,
+                 animation: google.maps.Animation.BOUNCE,
+                 position: center,
+                 icon: image,
                  map: $scope.map
            });
            var map = new google.maps.Map(document.getElementById("googleMap"),mapOptions);
@@ -35,10 +120,100 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
 
         else if(para==='two'){
               var center = new google.maps.LatLng($scope.data.lat, $scope.data.lng);
-              var mapOptions = { center: center, zoom: 10 };
+              var mapOptions = {
+                center: center,
+                 zoom: 12,
+                 styles:[
+                       {
+                           "featureType": "road",
+                           "elementType": "geometry",
+                           "stylers": [
+                               {
+                                   "visibility": "simplified"
+                               }
+                           ]
+                       },
+                       {
+                           "featureType": "road.arterial",
+                           "stylers": [
+                               {
+                                   "hue": 149
+                               },
+                               {
+                                   "saturation": -78
+                               },
+                               {
+                                   "lightness": 0
+                               }
+                           ]
+                       },
+                       {
+                           "featureType": "road.highway",
+                           "stylers": [
+                               {
+                                   "hue": -31
+                               },
+                               {
+                                   "saturation": -40
+                               },
+                               {
+                                   "lightness": 2.8
+                               }
+                           ]
+                       },
+                       {
+                           "featureType": "poi",
+                           "elementType": "label",
+                           "stylers": [
+                               {
+                                   "visibility": "off"
+                               }
+                           ]
+                       },
+                       {
+                           "featureType": "landscape",
+                           "stylers": [
+                               {
+                                   "hue": 163
+                               },
+                               {
+                                   "saturation": -26
+                               },
+                               {
+                                   "lightness": -1.1
+                               }
+                           ]
+                       },
+                       {
+                           "featureType": "transit",
+                           "stylers": [
+                               {
+                                   "visibility": "off"
+                               }
+                           ]
+                       },
+                       {
+                           "featureType": "water",
+                           "stylers": [
+                               {
+                                   "hue": 3
+                               },
+                               {
+                                   "saturation": -24.24
+                               },
+                               {
+                                   "lightness": -38.57
+                               }
+                           ]
+                       }
+                   ]
+               };
+              var image = 'http://maps.google.com/intl/en_us/mapfiles/ms/micons/blue.png';
               var marker = new google.maps.Marker({
                 position: center,
-                map: $scope.map
+                map: $scope.map,
+                icon: image,
+                animation:google.maps.Animation.BOUNCE
               });
               var map = new google.maps.Map(document.getElementById("googleMap"),mapOptions);
               $scope.map = marker.setMap(map);
@@ -52,18 +227,101 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
                       $scope.initMap = function() {
                       var mycenter = {lat: $scope.data.lat, lng: $scope.data.lng};
                       console.log('initMap called');
-
                       $scope.map = new google.maps.Map(document.getElementById('googleMap'), {
                         center: mycenter,
-                        zoom: 10
+                        zoom: 12,
+                        styles:[
+                              {
+                                  "featureType": "road",
+                                  "elementType": "geometry",
+                                  "stylers": [
+                                      {
+                                          "visibility": "simplified"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "featureType": "road.arterial",
+                                  "stylers": [
+                                      {
+                                          "hue": 149
+                                      },
+                                      {
+                                          "saturation": -78
+                                      },
+                                      {
+                                          "lightness": 0
+                                      }
+                                  ]
+                              },
+                              {
+                                  "featureType": "road.highway",
+                                  "stylers": [
+                                      {
+                                          "hue": -31
+                                      },
+                                      {
+                                          "saturation": -40
+                                      },
+                                      {
+                                          "lightness": 2.8
+                                      }
+                                  ]
+                              },
+                              {
+                                  "featureType": "poi",
+                                  "elementType": "label",
+                                  "stylers": [
+                                      {
+                                          "visibility": "off"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "featureType": "landscape",
+                                  "stylers": [
+                                      {
+                                          "hue": 163
+                                      },
+                                      {
+                                          "saturation": -26
+                                      },
+                                      {
+                                          "lightness": -1.1
+                                      }
+                                  ]
+                              },
+                              {
+                                  "featureType": "transit",
+                                  "stylers": [
+                                      {
+                                          "visibility": "off"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "featureType": "water",
+                                  "stylers": [
+                                      {
+                                          "hue": 3
+                                      },
+                                      {
+                                          "saturation": -24.24
+                                      },
+                                      {
+                                          "lightness": -38.57
+                                      }
+                                  ]
+                              }
+                          ]
                       });
 
                       $scope.infowindow = new google.maps.InfoWindow();
                       var service = new google.maps.places.PlacesService($scope.map);
-                      service.nearbySearch({
+                      service.textSearch({
                         location: mycenter,
                         radius: 10000,
-                        type: [$scope.tacotype]
+                        query: [$scope.tacotype]
                       }, callback);
                       console.log('nearbySearch called');
                     }
@@ -79,9 +337,11 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
 
                     function createMarker(place) {
                       var placeLoc = place.geometry.location;
+                      var image = 'http://maps.google.com/intl/en_us/mapfiles/ms/micons/blue.png';
                       var marker = new google.maps.Marker({
                         map: $scope.map,
-                        position: place.geometry.location
+                        position: place.geometry.location,
+                        icon: image
                       });
 
                       google.maps.event.addListener(marker, 'click', function() {
