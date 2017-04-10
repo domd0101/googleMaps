@@ -1,0 +1,109 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #7986cb;
+  color: black;
+  font-family: Georgia, serif; }
+
+.title img {
+  border-radius: 2px;
+  margin: 4px; }
+
+.big {
+  padding: 14px;
+  transition: opacity .2s ease-in-out;
+  opacity: .95; }
+
+.big:hover {
+  background: #3f51b5;
+  opacity: 1; }
+
+.material-icons {
+  color: white; }
+
+.map {
+  width: 100%;
+  height: 620px;
+  border: 2.5px solid #CAC4CE;
+  border-radius: 6px;
+  box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.75); }
+
+.maprap {
+  padding: 3px 8px 0 8px; }
+
+.searchstuff1 {
+  display: flex; }
+
+.navstuff {
+  width: 100%;
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  font-size: 20px; }
+
+.stuff1 {
+  display: flex;
+  margin-right: 5%;
+  padding: 2% 1% 0 1%; }
+
+.stuff {
+  display: flex;
+  margin-right: 5%;
+  padding: 1.5% 1% 0 1%;
+  transition: opacity .2s ease-in-out;
+  opacity: .95; }
+
+.stuff:hover {
+  background: #3f51b5;
+  opacity: 1; }
+
+.firstzip {
+  color: red;
+  font-size: 10px; }
+
+/*# sourceMappingURL=maps/style.css.map */

@@ -16,12 +16,12 @@ var cachebust = new CacheBust();
           .pipe(cachebust.resources())
           .pipe(concat('style.css'))
           .pipe(sourcemaps.write('./maps'))
-          .pipe(gulp.dest('.dist'));
+          .pipe(gulp.dest('./dist/styles'));
   })
 
 
   gulp.task('build-js', function() {
-     return gulp.src('js/**/*.js')
+     return gulp.src('js/*.js')
         .pipe(sourcemaps.init())
         .pipe(print())
         .pipe(babel({ presets: ['es2015'] }))
