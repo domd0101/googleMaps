@@ -1,6 +1,19 @@
-app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
-
+app1.controller('mainCtrl',['$scope','$http','mainService',function($scope,$http,mainService){
     $scope.map;
+    $scope.day = mainService.day;
+    $scope.night = mainService.night;
+    $scope.mode = $scope.day;
+    $scope.modes = function(mode){
+      if(mode==='day'){
+        $scope.mode = $scope.day;
+        $scope.gMaps($scope.data1,$scope.num)
+      }
+      else if(mode==='night'){
+        $scope.mode = $scope.night;
+        $scope.gMaps($scope.data1,$scope.num)
+      }
+    }
+
 
     $scope.current = (function(){
       var promise = $http.get('http://ip-api.com/json');
@@ -19,90 +32,7 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
            var mapOptions = {
              center: center,
               zoom: 13,
-              styles:[
-                    {
-                        "featureType": "road",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "visibility": "simplified"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.arterial",
-                        "stylers": [
-                            {
-                                "hue": 149
-                            },
-                            {
-                                "saturation": -78
-                            },
-                            {
-                                "lightness": 0
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "stylers": [
-                            {
-                                "hue": -31
-                            },
-                            {
-                                "saturation": -40
-                            },
-                            {
-                                "lightness": 2.8
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "label",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "landscape",
-                        "stylers": [
-                            {
-                                "hue": 163
-                            },
-                            {
-                                "saturation": -26
-                            },
-                            {
-                                "lightness": -1.1
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "transit",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "water",
-                        "stylers": [
-                            {
-                                "hue": 3
-                            },
-                            {
-                                "saturation": -24.24
-                            },
-                            {
-                                "lightness": -38.57
-                            }
-                        ]
-                    }
-                ]
+              styles: $scope.mode
              };
            var image = 'http://maps.google.com/intl/en_us/mapfiles/ms/micons/blue.png';
            var marker = new google.maps.Marker({
@@ -125,90 +55,7 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
               var mapOptions = {
                 center: center,
                  zoom: 12,
-                 styles:[
-                       {
-                           "featureType": "road",
-                           "elementType": "geometry",
-                           "stylers": [
-                               {
-                                   "visibility": "simplified"
-                               }
-                           ]
-                       },
-                       {
-                           "featureType": "road.arterial",
-                           "stylers": [
-                               {
-                                   "hue": 149
-                               },
-                               {
-                                   "saturation": -78
-                               },
-                               {
-                                   "lightness": 0
-                               }
-                           ]
-                       },
-                       {
-                           "featureType": "road.highway",
-                           "stylers": [
-                               {
-                                   "hue": -31
-                               },
-                               {
-                                   "saturation": -40
-                               },
-                               {
-                                   "lightness": 2.8
-                               }
-                           ]
-                       },
-                       {
-                           "featureType": "poi",
-                           "elementType": "label",
-                           "stylers": [
-                               {
-                                   "visibility": "off"
-                               }
-                           ]
-                       },
-                       {
-                           "featureType": "landscape",
-                           "stylers": [
-                               {
-                                   "hue": 163
-                               },
-                               {
-                                   "saturation": -26
-                               },
-                               {
-                                   "lightness": -1.1
-                               }
-                           ]
-                       },
-                       {
-                           "featureType": "transit",
-                           "stylers": [
-                               {
-                                   "visibility": "off"
-                               }
-                           ]
-                       },
-                       {
-                           "featureType": "water",
-                           "stylers": [
-                               {
-                                   "hue": 3
-                               },
-                               {
-                                   "saturation": -24.24
-                               },
-                               {
-                                   "lightness": -38.57
-                               }
-                           ]
-                       }
-                   ]
+                 styles: $scope.mode
                };
               var image = 'http://maps.google.com/intl/en_us/mapfiles/ms/micons/blue.png';
               var marker = new google.maps.Marker({
@@ -233,90 +80,7 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
                       $scope.map = new google.maps.Map(document.getElementById('googleMap'), {
                         center: mycenter,
                         zoom: 12,
-                        styles:[
-                              {
-                                  "featureType": "road",
-                                  "elementType": "geometry",
-                                  "stylers": [
-                                      {
-                                          "visibility": "simplified"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "road.arterial",
-                                  "stylers": [
-                                      {
-                                          "hue": 149
-                                      },
-                                      {
-                                          "saturation": -78
-                                      },
-                                      {
-                                          "lightness": 0
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "road.highway",
-                                  "stylers": [
-                                      {
-                                          "hue": -31
-                                      },
-                                      {
-                                          "saturation": -40
-                                      },
-                                      {
-                                          "lightness": 2.8
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "poi",
-                                  "elementType": "label",
-                                  "stylers": [
-                                      {
-                                          "visibility": "off"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "landscape",
-                                  "stylers": [
-                                      {
-                                          "hue": 163
-                                      },
-                                      {
-                                          "saturation": -26
-                                      },
-                                      {
-                                          "lightness": -1.1
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "transit",
-                                  "stylers": [
-                                      {
-                                          "visibility": "off"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "water",
-                                  "stylers": [
-                                      {
-                                          "hue": 3
-                                      },
-                                      {
-                                          "saturation": -24.24
-                                      },
-                                      {
-                                          "lightness": -38.57
-                                      }
-                                  ]
-                              }
-                          ]
+                        styles: $scope.mode
                       });
 
                       $scope.infowindow = new google.maps.InfoWindow();

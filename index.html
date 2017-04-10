@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/reset.css">
   <title>Document</title>
 </head>
 <body ng-controller='mainCtrl'>
@@ -43,8 +44,11 @@
               <li><a class="waves-effect" href="#!" ng-click='taco("Pizza")'>Pizza</a></li>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse big"><i class="small material-icons ">navigation</i></a>
-            <a class='top1'>Map's</a>
-
+            <div class='navstuff'>
+            <h1 ng-click='modes("day")' class='stuff'><i class="small material-icons">invert_colors</i></h1>
+            <h1 ng-click='modes("night")' class='stuff'><i class="small material-icons">invert_colors_off</i></h1>
+            <h1 class='stuff1'>Map's</h1>
+            </div>
     </div>
 
 <div class='maprap'>
@@ -59,6 +63,7 @@
 <script src="js/app.js" charset="utf-8"></script>
 <script src="js/mainCtrl.js" charset="utf-8"></script>
 <script src="js/dirLogo.js" charset="utf-8"></script>
+<script src="js/mainService.js" charset="utf-8"></script>
 
 </body>
 </html>
