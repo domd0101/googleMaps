@@ -114,6 +114,8 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
            });
            var map = new google.maps.Map(document.getElementById("googleMap"),mapOptions);
            $scope.map = marker.setMap(map);
+           /// search stufff
+
          }
 
 
@@ -218,9 +220,10 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
               var map = new google.maps.Map(document.getElementById("googleMap"),mapOptions);
               $scope.map = marker.setMap(map);
               ////// new new ++++++++++++++++ new new ////////
-                    $scope.infowindow;
 
+                    $scope.infowindow;
                     $scope.taco = function(para){
+                      $scope.zipshow = true;
                       $scope.food = '';
                       $scope.tacotype = para;
 
@@ -354,6 +357,7 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
                     // $scope.map = marker.setMap(map)
                     $scope.initMap();
                   }
+                  //here
                 }
             })();
           }
@@ -364,7 +368,6 @@ app1.controller('mainCtrl',['$scope','$http',function($scope,$http){
     $scope.newloc = function(zip){
       var zip = zip;
       var promise = $http.get("http://ziplocate.us/api/v1/"+zip+"");
-      $scope.zip1 = '';
         return promise.then(function(result){
           $scope.data = result.data;
           $scope.num = 'two';

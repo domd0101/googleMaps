@@ -18,26 +18,29 @@
               </div></li>
                 <div class="row">
                   <div class="input-field col s9">
-                    <form  ng-submit='newloc(zip1)'>
-                    <input ng-model='zip1' id="first_name2" type="text" class="validate">
+                    <form ng-submit='newloc(zip1)'>
+                    <input  ng-model='zip1' id="first_name2" type="text" class="validate">
                     <label class="active" for="first_name2">Zip code</label>
                     </form>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s9">
-                    <form  ng-submit='taco(food)'>
-                    <input ng-model='food' id="first_name2" type="text" class="validate">
+                    <form ng-submit='taco(food)'>
+                    <input name='yo' ng-model='food' id="first_name2" type="text" class="validate" required>
                     <label class="active" for="first_name2">Find</label>
                     </form>
+                    <div ng-show='!zip1 && food' class='firstzip'>Please Enter Zip First</div>
                   </div>
                 </div>
 
               <li><div class="divider"></div></li>
               <li><a class="subheader">Quick Search</a></li>
-              <li><a class="waves-effect" href="#!">Resturants</a></li>
-              <li><a class="waves-effect" href="#!">Shops</a></li>
-              <li><a class="waves-effect" href="#!">Hotels</a></li>
+              <li><a class="waves-effect" href="#!" ng-click='taco("Resturants")'>Resturants</a></li>
+              <li><a class="waves-effect" href="#!" ng-click='taco("Shops")'>Shops</a></li>
+              <li><a class="waves-effect" href="#!" ng-click='taco("Hotels")'>Hotels</a></li>
+              <li><a class="waves-effect" href="#!" ng-click='taco("Gyms")'>Gyms</a></li>
+              <li><a class="waves-effect" href="#!" ng-click='taco("Pizza")'>Pizza</a></li>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse big"><i class="small material-icons ">navigation</i></a>
             <a class='top1'>Map's</a>
